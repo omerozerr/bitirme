@@ -1,0 +1,20 @@
+/* App.css */
+.baby-status,
+.alerts,
+.controls {
+    margin: 10px;
+    padding: 10px;
+    /* Add more styles here */
+}
+
+.alert {
+    background-color: purple;
+    color: white;
+    margin-bottom: 5px;
+    /* Add more styles here */
+}
+
+button {
+    margin: 5px;
+    /* Add more styles here */
+}
