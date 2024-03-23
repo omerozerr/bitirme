@@ -6,6 +6,8 @@ import BabyStatus from "@/components/BabyStatus";
 import Alert from "@/components/Alert";
 import Controls from "@/components/Controls";
 import "./App.css"; // Make sure to create an App.css for styles
+import SensorDataComponent from "@/components/SensorDataComponent";
+import { socket } from "@/components/socketService";
 
 export default function Home() {
     const [status, setStatus] = useState({
@@ -27,7 +29,7 @@ export default function Home() {
 
     const handleLullabyClick = (lullabyNumber) => {
         console.log(`Play Lullaby ${lullabyNumber}`);
-        // Additional logic here
+        socket.emit("play_lullaby", { lullabyNumber });
     };
 
     return (
@@ -42,6 +44,7 @@ export default function Home() {
                 onTalkClick={handleTalkClick}
                 onLullabyClick={handleLullabyClick}
             />
+            <SensorDataComponent />
         </div>
     );
 }
